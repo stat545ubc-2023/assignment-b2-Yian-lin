@@ -24,6 +24,7 @@
 #'
 #' # Change the title of the y axis.
 #' plot_missing_values_proportions(df=airquality, ylab = "Columns")
+
 plot_missing_values_proportions <- function(df, vars=tidyselect::everything(),
                                             point_color="blue", line_color="blue",
                                             ylab="Variables",

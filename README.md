@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of rmiss is to help visualize missing vales in data frames.
+The goal of rmiss is to help visualize missing values in data frames.
 This package contains a convenience function to make a ggplot to
 visualize the proportion of missing values for all or selected columns
 in a given data frame.

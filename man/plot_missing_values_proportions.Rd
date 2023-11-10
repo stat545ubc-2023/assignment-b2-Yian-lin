@@ -30,7 +30,7 @@ plot_missing_values_proportions(
 a ggplot object visualizing the proportion of missing values for all or selected columns.
 }
 \description{
-Makes a ggplot to visualize the proportion of missing values for all or selected columns in a data frame.
+This is a function that makes a ggplot to visualize the proportion of missing values for all or selected columns in a data frame.
 }
 \examples{
 # Create the plot for all variables in airquality (a dataset in Base R)

@@ -1,6 +1,6 @@
 #' Visualization of missing values
 #'
-#' Makes a ggplot to visualize the proportion of missing values for all or selected columns in a data frame.
+#' This is a function that makes a ggplot to visualize the proportion of missing values for all or selected columns in a data frame.
 #' @param df a data frame.
 #' @param vars a vector containing selected name(s) of variable(s) in `df`. These selected variables will be included in the plot. The default is to show the proportion of missing values for all variables in `df`.
 #' @param point_color the color to be used for the points. The default is "blue".
@@ -11,6 +11,7 @@
 #' @return a ggplot object visualizing the proportion of missing values for all or selected columns.
 #'
 #' @importFrom magrittr %>%
+#' @importFrom rlang .data
 #'
 #' @export
 #'
@@ -46,14 +47,14 @@ plot_missing_values_proportions <- function(df, vars=tidyselect::everything(),
 
   # Plot it
   ggplot2::ggplot(data = count_missing,
-                  ggplot2::aes(x = stats::reorder(Variable, missing_count))) +
-    ggplot2::geom_bar(ggplot2::aes(y = missing_count/nrow(df)),
+                  ggplot2::aes(x = stats::reorder(.data$Variable, .data$missing_count))) +
+    ggplot2::geom_bar(ggplot2::aes(y = .data$missing_count/nrow(df)),
              stat = "identity",
              position = "dodge",
              width = 0.001,
              colour = line_color,
              fill = line_color) +
-    ggplot2::geom_point(ggplot2::aes(y = missing_count/nrow(df)),
+    ggplot2::geom_point(ggplot2::aes(y = .data$missing_count/nrow(df)),
                colour = point_color,
                fill = point_color) +
     ggplot2::ylim(0, 1) +

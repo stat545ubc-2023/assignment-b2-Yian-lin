@@ -26,7 +26,7 @@ You can install the development version of rmiss from [GitHub](https://github.co
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("stat545ubc-2023/rmiss", ref = "0.1.0")
+devtools::install_github("stat545ubc-2023/rmiss")
 ```
 
 ## Example
